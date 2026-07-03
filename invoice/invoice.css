@@ -1,0 +1,193 @@
+/* ===========================
+   HB ERP - Tally Invoice Style
+=========================== */
+
+body{
+    background:#f3f4f6;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.invoice-container{
+
+    width:210mm;
+    min-height:297mm;
+    margin:20px auto;
+    background:#fff;
+    border:2px solid #000;
+    box-shadow:0 5px 20px rgba(0,0,0,.15);
+
+}
+
+.invoice-title{
+
+    text-align:center;
+    font-size:26px;
+    font-weight:bold;
+    letter-spacing:2px;
+    border-bottom:2px solid #000;
+    padding:10px;
+
+}
+
+.inv-table{
+
+    width:100%;
+    border-collapse:collapse;
+
+}
+
+.inv-table td,
+.inv-table th{
+
+    border:1px solid #000;
+    padding:5px;
+    vertical-align:top;
+    font-size:13px;
+
+}
+
+.inv-table input,
+.inv-table textarea,
+.inv-table select{
+
+    width:100%;
+    border:none;
+    outline:none;
+    background:transparent;
+    font-size:13px;
+    padding:2px;
+
+}
+
+.inv-table textarea{
+
+    resize:none;
+    min-height:70px;
+
+}
+
+.company-name{
+
+    font-size:22px;
+    color:#006400;
+    font-weight:bold;
+
+}
+
+.section-title{
+
+    font-weight:bold;
+    margin-bottom:5px;
+
+}
+
+.invoice-details td{
+
+    padding:6px;
+
+}
+
+.product-table th{
+
+    background:#f1f1f1;
+    text-align:center;
+
+}
+
+.product-table td{
+
+    height:35px;
+
+}
+
+.product-table input{
+
+    text-align:center;
+
+}
+
+.total-table{
+
+    width:100%;
+    border-collapse:collapse;
+
+}
+
+.total-table td{
+
+    border:1px solid #000;
+    padding:6px;
+
+}
+
+.total-label{
+
+    font-weight:bold;
+
+}
+
+.sign-box{
+
+    height:120px;
+    position:relative;
+
+}
+
+.signature{
+
+    position:absolute;
+    right:10px;
+    bottom:10px;
+    font-weight:bold;
+
+}
+
+.toolbar{
+
+    width:210mm;
+    margin:auto;
+    margin-bottom:15px;
+    display:flex;
+    justify-content:flex-end;
+    gap:10px;
+
+}
+
+.toolbar .btn{
+
+    min-width:140px;
+
+}
+
+@media print{
+
+body{
+
+background:#fff;
+
+}
+
+.sidebar,
+.topbar,
+.toolbar{
+
+display:none;
+
+}
+
+.main{
+
+margin:0;
+
+}
+
+.invoice-container{
+
+width:100%;
+margin:0;
+border:none;
+box-shadow:none;
+
+}
+
+}
