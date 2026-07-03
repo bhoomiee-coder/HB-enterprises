@@ -27,15 +27,20 @@ $result = mysqli_query($conn,"SELECT * FROM products ORDER BY id ASC");
 
 <tr>
 
+<tr>
+
 <th>ID</th>
 <th>Product</th>
 <th>Description</th>
 <th>Size</th>
 <th>Motor</th>
+<th>HSN</th>
+
 <th>Price</th>
 <th>Image</th>
 <th>Action</th>
 
+</tr>
 </tr>
 
 </thead>
@@ -47,16 +52,14 @@ $result = mysqli_query($conn,"SELECT * FROM products ORDER BY id ASC");
 <tr>
 
 <td><?= $row['id']; ?></td>
-
 <td><?= $row['product_name']; ?></td>
-
 <td><?= $row['description']; ?></td>
-
 <td><?= $row['size']; ?></td>
-
 <td><?= $row['motor']; ?></td>
+<td><?= $row['hsn']; ?></td>
 
-<td>₹<?= number_format($row['price']); ?></td>
+<td>₹<?= number_format($row['price'],2); ?></td>
+
 
 <td>
 
@@ -89,15 +92,19 @@ width="70">
 
 <td>
 
-<a href="edit.php?id=<?= $row['id']; ?>" class="btn btn-warning btn-sm">
-<i class="fa-solid fa-pen"></i>
-</a>
+<div class="d-flex justify-content-center gap-2">
 
-<a href="delete.php?id=<?= $row['id']; ?>"
-   class="btn btn-danger btn-sm"
-   onclick="return confirm('Are you sure you want to delete this product?');">
-    <i class="fa-solid fa-trash"></i>
-</a>
+    <a href="edit.php?id=<?= $row['id']; ?>" class="btn btn-warning btn-sm">
+        <i class="fa-solid fa-pen"></i>
+    </a>
+
+    <a href="delete.php?id=<?= $row['id']; ?>"
+       class="btn btn-danger btn-sm"
+       onclick="return confirm('Are you sure you want to delete this product?');">
+        <i class="fa-solid fa-trash"></i>
+    </a>
+
+</div>
 
 </td>
 

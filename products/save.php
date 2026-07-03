@@ -8,7 +8,8 @@ $size = $_POST['size'];
 $motor = $_POST['motor'];
 $price = $_POST['price'];
 $description = $_POST['description'];
-$status = $_POST['status'];
+$hsn = $_POST['hsn'];
+
 
 $image = "";
 
@@ -23,9 +24,9 @@ if(isset($_FILES['image']) && $_FILES['image']['name'] != "")
 }
 
 $sql = "INSERT INTO products
-(product_name,size,motor,description,image,price,status)
+(product_name,size,motor,description,image,price,hsn)
 VALUES
-('$product','$size','$motor','$description','$image','$price','$status')";
+('$product','$size','$motor','$description','$image','$price','$hsn')";
 
 if(mysqli_query($conn,$sql))
 {

@@ -50,6 +50,15 @@ $row = mysqli_fetch_assoc($result);
                                class="form-control"
                                value="<?php echo $row['motor']; ?>">
                     </div>
+<div class="col-md-6 mb-3">
+    <label>HSN Code</label>
+    <input
+    type="text"
+    name="hsn"
+    class="form-control"
+    value="<?php echo $row['hsn']; ?>">
+</div>
+
 
                     <div class="col-md-6 mb-3">
                         <label class="form-label">Price</label>

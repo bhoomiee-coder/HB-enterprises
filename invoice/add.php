@@ -11,6 +11,7 @@ $customer=mysqli_fetch_assoc(mysqli_query($conn,"SELECT * FROM customers LIMIT 1
 $next=mysqli_fetch_assoc(mysqli_query($conn,"SELECT MAX(id) as id FROM invoices"));
 
 $invoice_no="HB".str_pad($next['id']+1,6,"0",STR_PAD_LEFT);
+
 ?>
 
 <link rel="stylesheet" href="invoice.css">
@@ -300,13 +301,13 @@ name="buyer_address"><?= $customer['address'];?></textarea>
 
 <th width="8%">Qty</th>
 
-<th width="8%">Unit</th>
+
 
 <th width="12%">Rate</th>
 
 <th width="17%">Amount</th>
 
-<th width="5%"></th>
+
 
 </tr>
 
@@ -341,7 +342,7 @@ data-price="<?= $p['price'];?>"
 
 data-hsn="<?= $p['hsn'];?>"
 
-data-unit="<?= $p['unit'];?>"
+
 
 >
 
@@ -384,14 +385,7 @@ value="1">
 
 </td>
 
-<td>
 
-<input
-type="text"
-name="unit[]"
-class="unit">
-
-</td>
 
 <td>
 
@@ -412,44 +406,37 @@ readonly>
 
 </td>
 
-<td>
 
-<button
-type="button"
-class="btn btn-success addRow">
-
-+
-
-</button>
-
-</td>
 
 </tr>
 
 </tbody>
 
 </table>
+</table>
+
+<div class="no-print" style="margin-top:10px;">
+    <button type="button" class="btn btn-success addRow">+</button>
+</div>
+
+<table class="inv-table">
+
+</td>
 <table class="inv-table">
 
 <tr>
-
 <td width="60%">
-
-<b>Amount Chargeable (in words)</b>
-
-<textarea
-
-id="amount_words"
-
-name="amount_words"
-
-readonly></textarea>
-
+    <b>Amount Chargeable (in words)</b>
+    <textarea id="amount_words" name="amount_words" readonly></textarea>
 </td>
 
 <td width="40%">
+    <table class="total-table">
+        ...
+    </table>
+</td>
 
-<table class="total-table">
+
 
 <tr>
 

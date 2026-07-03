@@ -67,6 +67,11 @@ include("../includes/sidebar.php");
 <textarea name="description" class="form-control"></textarea>
 
 </div>
+<div class="col-md-6 mb-3">
+    <label>HSN Code</label>
+    <input type="text" name="hsn" class="form-control" placeholder="Enter HSN Code">
+</div>
+
 
 <div class="col-md-6 mb-3">
 

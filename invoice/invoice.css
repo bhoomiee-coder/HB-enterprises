@@ -141,7 +141,11 @@ body{
     font-weight:bold;
 
 }
-
+.inv-table textarea,
+.inv-table div {
+    overflow: hidden !important;
+    max-height: none !important;
+}
 .toolbar{
 
     width:210mm;
@@ -158,36 +162,126 @@ body{
     min-width:140px;
 
 }
+@media print {
 
+    @page {
+        size: A4;
+        margin: 5mm;   /* IMPORTANT */
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        background: #fff;
+    }
+
+    .sidebar,
+    .topbar,
+    .toolbar {
+        display: none !important;
+    }
+
+    .invoice-container {
+        width: 100%;
+        max-width: 200mm;   /* IMPORTANT (A4 safe width) */
+        margin: 0 auto;
+        border: none;
+        box-shadow: none;
+
+        transform: scale(0.95);
+        transform-origin: top left;
+        
+    overflow: visible !important;
+}
+    }
+
+    table {
+        width: 100% !important;
+        table-layout: fixed; /* IMPORTANT prevents overflow */
+    }
+
+    td, th {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+
+@media print {
+
+    @page {
+        size: A4;
+        margin: 5mm;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        background: white;
+    }
+
+    .sidebar,
+    .topbar,
+    .toolbar {
+        display: none !important;
+    }
+
+    /* Invoice fit */
+    .invoice-container {
+        width: 100%;
+        max-width: 200mm;
+        margin: 0 auto;
+        border: none;
+        box-shadow: none;
+
+        transform: scale(0.90);
+        transform-origin: top left;
+    }
+
+    table {
+        width: 100% !important;
+        table-layout: fixed;
+        border-collapse: collapse;
+    }
+
+    td, th {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+    /* remove button column */
+    .no-print {
+        display: none !important;
+    }
+
+    /* remove scrollbars completely */
+    * {
+        overflow: visible !important;
+    }
+
+    /* prevent breaking rows */
+    tr {
+        page-break-inside: avoid;
+    }
+}
+@media print {
+    .btn,
+    button {
+        display: none !important;
+    }
+}
 @media print{
 
-body{
+    .product-table th.no-print,
+    .product-table td.no-print{
+        display:none !important;
+        width:0 !important;
+        padding:0 !important;
+        border:none !important;
+    }
 
-background:#fff;
-
-}
-
-.sidebar,
-.topbar,
-.toolbar{
-
-display:none;
-
-}
-
-.main{
-
-margin:0;
-
-}
-
-.invoice-container{
-
-width:100%;
-margin:0;
-border:none;
-box-shadow:none;
-
-}
+    .product-table{
+        table-layout:auto !important;
+        width:100%;
+    }
 
 }
