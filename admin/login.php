@@ -197,7 +197,7 @@ transform:translateY(0);
 <div class="login-box">
 
     <div class="logo">
-        <img src="../uploads/images/logo.png" alt="HB Enterprises Logo">
+        <img src="../uploads/products/images/logo.png" alt="HB Enterprises Logo">
     </div>
 
     <h2>HB ENTERPRISES</h2>
